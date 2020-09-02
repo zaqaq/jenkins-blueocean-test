@@ -1,0 +1,19 @@
+{
+  "name": "cnm",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build:test": "cross-env MODE=test nuxt build",
+    "run:test": "cross-env MODE=test nuxt start",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.0",
+    "cross-env": "^7.0.2",
+    "nuxt": "^2.14.0"
+  },
+  "devDependencies": {}
+}
