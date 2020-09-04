@@ -15,10 +15,11 @@ tar -zcvf m-package.tar.gz .nuxt nuxt.config.js package.json assets
 sudo mv m-package.tar.gz /home'''
       }
     }
+
     stage('cleanSpace') {
       steps {
-            cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true, cleanupMatrixParent: true)
-          }
+        cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, cleanupMatrixParent: true)
+      }
     }
 
   }
