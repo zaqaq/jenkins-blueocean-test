@@ -1,12 +1,12 @@
 pipeline {
    agent any
   stages {
-
+    stage('Pull deploy code') {}
     stage('Stage 2') {
       steps {
         sh '''yarn install
 yarn build:test
-pm2 restart my-nuxt'''
+pm2 restart "my-nuxt"'''
       }
     }
     stage('Stage 3') {
