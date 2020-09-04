@@ -11,8 +11,8 @@ pipeline {
       steps {
         sh '''yarn install
 yarn build:test
-tar -zcvf m-package.tar.gz .nuxt nuxt.config.js package.json assets
-sudo mv m-package.tar.gz /home'''
+tar -zcvf m-package.tar.gz .nuxt nuxt.config.js package.json assets node_modules
+mv m-package.tar.gz /home'''
       }
     }
 
@@ -28,7 +28,7 @@ sudo mv m-package.tar.gz /home'''
 rm -rf .nuxt nuxt.config.js package.json assets node_modules yarn.lock
 tar -xzvf m-package.tar.gz
 rm -rf m-package.tar.gz
-yarn install
+#yarn install
 pm2 restart my-nuxt'''
       }
     }
