@@ -10,7 +10,8 @@ pipeline {
 
     stage('Stage 2') {
       steps {
-        sh 'node -v'
+        sh '''node -v
+yarn --version'''
       }
     }
 
