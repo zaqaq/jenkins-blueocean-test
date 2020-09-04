@@ -12,7 +12,7 @@ pipeline {
         sh '''yarn install
 yarn build:test
 tar -zcvf m-package.tar.gz .nuxt nuxt.config.js package.json assets
-mv m-package.tar.gz /home'''
+sudo mv m-package.tar.gz /home'''
       }
     }
     stage('cleanSpace') {
