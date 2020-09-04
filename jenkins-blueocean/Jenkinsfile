@@ -27,9 +27,9 @@ sudo mv m-package.tar.gz /home'''
         sh '''cd /home
 rm -rf .nuxt nuxt.config.js package.json assets node_modules yarn.lock
 tar -xzvf m-package.tar.gz
-rm -rf mvedeng-package.tar.gz
+rm -rf m-package.tar.gz
 yarn install
-pm2 restart 0'''
+pm2 restart my-nuxt'''
       }
     }
 
