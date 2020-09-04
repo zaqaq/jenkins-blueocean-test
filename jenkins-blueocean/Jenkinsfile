@@ -7,24 +7,18 @@ pipeline {
       }
     }
 
-    stage('Stage 2') {
-      parallel {
-        stage('build now') {
-          steps {
-            sh '''yarn install
+    stage('build now) {
+      steps {
+        sh '''yarn install
 yarn build:test
 tar -zcvf m-package.tar.gz .nuxt nuxt.config.js package.json assets
 mv m-package.tar.gz /home'''
-          }
-        }
-
-        stage('cleanSpace') {
-          steps {
+      }
+    }
+    stage('cleanSpace') {
+      steps {
             cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true, cleanupMatrixParent: true)
           }
-        }
-
-      }
     }
 
   }
