@@ -1,10 +1,15 @@
 pipeline {
-  agent any
   stages {
     stage('Stage 1') {
       steps {
         echo 'Hello world!'
       }
+      steps {
+              cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, cleanupMatrixParent: true, deleteDirs: true)
+            }
+      steps {
+              agent any
+        }
     }
 
     stage('Stage 2') {
@@ -12,12 +17,6 @@ pipeline {
         sh '''yarn install
 yarn build:test
 pm2 start yarn --name "my-nuxt" -- run:test'''
-      }
-    }
-
-    stage('') {
-      steps {
-        cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, cleanupMatrixParent: true, deleteDirs: true)
       }
     }
 
