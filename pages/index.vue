@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        cnm
+        cn啊 Wind
       </h1>
       <div class="links">
         <a
