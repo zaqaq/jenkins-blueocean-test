@@ -15,7 +15,7 @@ pm2 start yarn --name "my-nuxt" -- run:test'''
       }
     }
 
-    stage('') {
+    stage('Stage 3 ') {
       steps {
         cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, cleanupMatrixParent: true, deleteDirs: true)
       }
