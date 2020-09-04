@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh '''yarn install
 yarn build:test
-pm2 start yarn --name "my-nuxt" -- run:test'''
+pm2 restart "my-nuxt"'''
       }
     }
   }
